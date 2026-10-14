@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Media Pembelajaran Interaktif Pengenalan Peta untuk Pemetaan Topografi Kelas XI SMK Negeri 5 Kolaka Utara">
+<title>MPI Pengenalan Peta | SMK Negeri 5 Kolaka Utara</title>
+<style>
+:root{--green:#123b32;--green2:#176b50;--mint:#e5f1e8;--gold:#c49a65;--ink:#20312b;--muted:#66756e;--paper:#f5f8f5;--white:#fff;--line:#dce6df;--red:#b83c3c;--blue:#286c9c;--shadow:0 12px 35px rgba(18,59,50,.09)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+header{background:linear-gradient(120deg,#102f29,#176b50);color:#fff;padding:15px max(20px,calc((100% - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:10;box-shadow:0 4px 18px #102f2922}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.3px}.brand-icon{width:42px;height:42px;border:1px solid #ffffff55;border-radius:12px;display:grid;place-items:center;font-size:24px}.brand small{display:block;font-weight:500;color:#d4e9de;font-size:11px}
+.header-actions{display:flex;gap:8px}.iconbtn{border:1px solid #ffffff55;background:#ffffff12;color:#fff;border-radius:10px;padding:8px 11px}
+main{max-width:1120px;margin:auto;padding:26px 20px 60px}.hero{background:linear-gradient(125deg,#123b32ee,#176b50dd),radial-gradient(circle at 80% 10%,#8ebd8b,#123b32);color:white;border-radius:24px;padding:clamp(26px,6vw,60px);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.hero:after{content:"";position:absolute;right:-45px;bottom:-95px;width:330px;height:330px;border:2px solid #ffffff22;border-radius:50%;box-shadow:0 0 0 22px #ffffff0c,0 0 0 44px #ffffff09,0 0 0 66px #ffffff06}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#c6e6d0;font-weight:800}.hero h1{font-size:clamp(34px,6vw,58px);line-height:1.05;margin:12px 0}.hero p{max-width:650px;color:#e2eee6}.hero .btn{margin-top:15px}
+.btn{border:0;border-radius:12px;padding:11px 17px;font-weight:750;background:var(--green2);color:white;transition:.18s}.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.btn.gold{background:var(--gold);color:#241b10}.btn.light{background:#fff;color:var(--green)}.btn.outline{background:transparent;color:var(--green);border:1px solid var(--line)}.btn.danger{background:#a83b3b}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:30px 0 15px}.section-head h2{margin:0;color:var(--green);font-size:25px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 5px 20px #123b3208}.menu-card{text-align:left;min-height:155px;display:flex;flex-direction:column;gap:8px;border:1px solid var(--line);color:var(--ink);transition:.18s}.menu-card:hover{border-color:var(--green2);transform:translateY(-3px);box-shadow:var(--shadow)}.menu-icon{font-size:30px}.menu-card strong{color:var(--green);font-size:18px}.menu-card small{color:var(--muted)}
+.page-title{margin:0;color:var(--green);font-size:clamp(27px,4vw,38px)}.crumb{font-size:13px;color:var(--muted);margin-bottom:8px}.content{background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(18px,4vw,32px);box-shadow:var(--shadow);margin-top:18px}
+h3{color:var(--green);margin:20px 0 8px}p{margin:8px 0 13px}.callout{border-left:4px solid var(--gold);background:#fbf6ee;padding:14px 17px;border-radius:0 12px 12px 0;margin:15px 0}.two{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.visual{border-radius:14px;min-height:150px;background:linear-gradient(135deg,#dcebdc,#f4ead9);position:relative;overflow:hidden;padding:16px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--green);font-weight:800}
+.contour{background-color:#e9eddb;background-image:repeating-radial-gradient(ellipse at 25% 50%,transparent 0 12px,#a77b4e 13px 14px,transparent 15px 25px),repeating-radial-gradient(ellipse at 80% 20%,transparent 0 19px,#78966b 20px 21px,transparent 22px 34px)}
+.maproad{background:linear-gradient(25deg,transparent 45%,#fff 46% 49%,#c49a65 50% 52%,#fff 53% 56%,transparent 57%),linear-gradient(140deg,#e4efdd 20%,#b7d0a8 20% 45%,#dbe9d0 45% 70%,#c7dcb8 70%)}
+.parcel{background-color:#e9eddf;background-image:linear-gradient(25deg,transparent 48%,#b17b45 49% 50%,transparent 51%),linear-gradient(90deg,transparent 48%,#b17b45 49% 50%,transparent 51%),linear-gradient(145deg,transparent 48%,#b17b45 49% 50%,transparent 51%);background-size:90px 80px}
+.river{background:linear-gradient(130deg,transparent 35%,#4b9ac0 36% 43%,transparent 44%),linear-gradient(40deg,#dbe9d2,#b8d1ad)}
+.kicker{font-size:12px;font-weight:800;letter-spacing:1px;color:var(--green2);text-transform:uppercase}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}th,td{text-align:left;padding:11px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#edf4ef;color:var(--green)}
+.pill{display:inline-block;background:var(--mint);color:var(--green);border-radius:99px;padding:4px 10px;font-size:12px;font-weight:800}
+.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.field{display:grid;gap:6px;margin:12px 0}.field label{font-weight:700;color:var(--green);font-size:14px}.field input{border:1px solid #cbd9d0;border-radius:10px;padding:11px 12px;width:100%;background:#fff}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.tab{border:1px solid var(--line);background:#fff;padding:9px 13px;border-radius:10px;color:var(--green);font-weight:700}.tab.active{background:var(--green);color:white}
+.match-row{display:grid;grid-template-columns:1fr 1.3fr;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}select{width:100%;padding:11px;border:1px solid #cbd9d0;border-radius:10px;background:white;color:var(--ink)}
+.feedback{padding:12px 14px;border-radius:11px;margin-top:13px;font-weight:650}.good{background:#e7f5e9;color:#17623c}.bad{background:#fff0ed;color:#9b3027}.neutral{background:#edf4f8;color:#245d7b}
+.question{border:1px solid var(--line);border-radius:15px;padding:18px;margin:16px 0}.option{display:flex;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin:8px 0;cursor:pointer}.option:has(input:checked){border-color:var(--green2);background:#edf5ef}.option input{accent-color:var(--green2)}
+.progress{height:9px;background:#e8eee9;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;background:var(--green2);width:0;transition:.2s}
+.score{font-size:52px;font-weight:900;color:var(--green);line-height:1.2}.footer{text-align:center;color:var(--muted);font-size:12px;margin:30px 0 0}
+.profile-mark{width:76px;height:76px;background:var(--mint);color:var(--green);border-radius:22px;display:grid;place-items:center;font-size:38px;margin-bottom:14px}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.three{grid-template-columns:1fr}.two{grid-template-columns:1fr}.match-row{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}}
+@media(max-width:480px){header{padding:12px 14px}.brand{font-size:13px}.brand-icon{width:36px;height:36px}.header-actions .iconbtn{padding:7px}.grid{gap:9px}.menu-card{padding:14px;min-height:140px}main{padding:18px 13px 45px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><div class="brand-icon">🧭</div><div>TOPOGRAFI LEARNING<small>SMK NEGERI 5 KOLAKA UTARA • KELAS XI</small></div></div>
+  <div class="header-actions">
+    <button class="iconbtn" id="homeBtn" title="Menu utama" aria-label="Menu utama">⌂</button>
+    <button class="iconbtn" id="audioBtn" title="Aktif/nonaktifkan audio" aria-label="Audio">🔊</button>
+  </div>
+</header>
+<main id="app" aria-live="polite"></main>
+<footer class="footer">MEDIA PEMBELAJARAN INTERAKTIF • PEMETAAN TOPOGRAFI • FASE F</footer>
+<script>
+const app=document.getElementById('app');
+const state={page:'home',student:localStorage.getItem('mpi_student')||'',audio:true,material:0,simulationDone:false,quizAnswers:{},quizSubmitted:false};
+const materials=[
+{title:'Pengertian Peta',body:`<p>Peta adalah gambaran permukaan bumi pada bidang datar yang diperkecil menggunakan skala tertentu dan disajikan dengan simbol serta kaidah kartografi.</p><div class="callout"><b>Inti konsep:</b> Peta membantu kita mengetahui lokasi, jarak, arah, persebaran objek, dan kondisi suatu wilayah.</div><h3>Mengapa peta penting bagi calon tenaga pemetaan?</h3><p>Peta menjadi media komunikasi informasi keruangan. Dalam pekerjaan survei, peta membantu merencanakan pengukuran, mengenali medan, dan menyajikan hasil pekerjaan.</p>`},
+{title:'Jenis-Jenis Peta',body:`<div class="three"><div><div class="visual">🗺️<br>PETA UMUM</div><p><b>Peta umum</b> menyajikan beberapa kenampakan geografis, misalnya jalan, sungai, permukiman, dan batas wilayah.</p></div><div><div class="visual maproad">▦<br>PETA TEMATIK</div><p><b>Peta tematik</b> menonjolkan satu tema tertentu, misalnya penggunaan lahan, curah hujan, atau kepadatan penduduk.</p></div><div><div class="visual contour">〰️<br>PETA TOPOGRAFI</div><p><b>Peta topografi</b> menyajikan relief/elevasi serta kenampakan alam dan buatan. Garis kontur merupakan salah satu unsur pentingnya.</p></div></div><div class="callout"><b>Ingat:</b> Peta topografi dapat digunakan untuk memahami bentuk medan, merencanakan survei, dan mendukung pekerjaan teknik.</div>`},
+{title:'Unsur-Unsur Peta',body:`<table><thead><tr><th>Unsur</th><th>Fungsi</th></tr></thead><tbody><tr><td>Judul</td><td>Menjelaskan tema atau wilayah yang dipetakan.</td></tr><tr><td>Skala</td><td>Menunjukkan perbandingan jarak peta dengan jarak sebenarnya.</td></tr><tr><td>Legenda</td><td>Menjelaskan arti simbol yang digunakan.</td></tr><tr><td>Simbol</td><td>Mewakili objek alam maupun buatan.</td></tr><tr><td>Orientasi</td><td>Menunjukkan arah, umumnya arah utara.</td></tr><tr><td>Koordinat</td><td>Membantu menentukan posisi suatu lokasi.</td></tr><tr><td>Garis tepi</td><td>Membatasi bidang peta.</td></tr><tr><td>Sumber dan tahun</td><td>Memberi informasi asal data dan waktu pembuatan/pembaruan.</td></tr></tbody></table>`},
+{title:'Skala Peta',body:`<p>Skala adalah perbandingan jarak pada peta dengan jarak horizontal sebenarnya di lapangan.</p><div class="callout"><b>Contoh skala 1 : 50.000</b><br>Artinya 1 cm pada peta mewakili 50.000 cm atau 500 meter di lapangan.</div><p><b>Rumus:</b> Jarak sebenarnya = jarak pada peta × penyebut skala.</p><p>Jika jarak pada peta 4 cm dan skalanya 1 : 50.000, jarak sebenarnya = 4 × 50.000 = 200.000 cm = 2.000 meter = 2 km.</p>`},
+{title:'Garis Kontur',body:`<div class="visual contour" style="min-height:210px">GARIS KONTUR • ILUSTRASI RELIEF</div><p>Garis kontur adalah garis pada peta yang menghubungkan titik-titik dengan elevasi yang sama terhadap datum vertikal yang digunakan.</p><ul><li>Garis kontur rapat menunjukkan lereng lebih curam.</li><li>Garis kontur renggang menunjukkan lereng lebih landai.</li><li>Kontur tertutup dengan elevasi makin tinggi ke tengah umumnya menunjukkan bukit.</li><li>Kontur tertutup dengan elevasi makin rendah ke tengah dapat menunjukkan cekungan.</li><li>Interval kontur adalah beda tinggi antara dua garis kontur yang berurutan.</li></ul><div class="callout">Baca angka elevasi dan pola kontur bersama-sama. Jangan menyimpulkan bukit atau cekungan hanya dari bentuk lingkaran kontur.</div>`},
+{title:'Simbol dan Legenda',body:`<div class="two"><div class="card"><div class="kicker">Hidrografi</div><h3>〰️ Unsur air</h3><p>Sungai, danau, waduk, dan saluran air. Pada banyak peta ditampilkan dengan warna biru.</p></div><div class="card"><div class="kicker">Transportasi</div><h3>━ Jaringan jalan</h3><p>Jalan, jalur, dan jembatan. Bentuk dan warna mengikuti legenda peta yang digunakan.</p></div><div class="card"><div class="kicker">Relief</div><h3>⌁ Kontur</h3><p>Garis yang menyatakan titik-titik dengan ketinggian sama.</p></div><div class="card"><div class="kicker">Bangunan</div><h3>▦ Permukiman</h3><p>Bangunan, fasilitas umum, dan kawasan terbangun.</p></div></div><div class="callout">Warna dan bentuk simbol dapat berbeda antarstandar atau seri peta. Selalu periksa legenda pada lembar peta yang sedang dibaca.</div>`}
+];
+const quiz=[
+{q:'Apa informasi utama yang dapat dibaca dari peta topografi?',opts:['Jumlah penduduk setiap rumah','Relief dan ketinggian permukaan bumi','Jenis tanaman di setiap kebun saja','Prakiraan cuaca harian'],a:1,why:'Peta topografi menyajikan relief/elevasi serta kenampakan alam dan buatan.'},
+{q:'Warga membutuhkan informasi batas dan identifikasi bidang tanah untuk keperluan pertanahan. Peta yang paling sesuai adalah ...',opts:['Peta iklim','Peta curah hujan','Peta kadaster atau peta bidang tanah','Peta geologi regional'],a:2,why:'Peta kadaster/peta bidang tanah menyajikan informasi persil dan batas bidang. Penetapan hak tetap mengacu pada data dan prosedur resmi pertanahan.'},
+{q:'Pada peta topografi, garis kontur tampak sangat rapat. Apa interpretasi yang paling tepat?',opts:['Lereng relatif curam','Lereng sangat landai','Wilayah pasti datar','Daerah tersebut selalu berupa danau'],a:0,why:'Kontur yang rapat menunjukkan perubahan elevasi yang besar dalam jarak horizontal relatif pendek, sehingga lereng lebih curam.'}
+];
+function setPage(p){state.page=p;render();window.scrollTo({top:0,behavior:'smooth'})}
+function shell(title,sub=''){return `<div class="crumb">Beranda / ${title}</div><h1 class="page-title">${title}</h1>${sub?`<p class="muted">${sub}</p>`:''}`}
+function render(){
+ if(state.page==='home') return home();
+ if(state.page==='materials') return materialsPage();
+ if(state.page==='simulation') return simulationPage();
+ if(state.page==='case') return casePage();
+ if(state.page==='quiz') return quizPage();
+ if(state.page==='profile') return profilePage();
+}
+function home(){
+ app.innerHTML=`<section class="hero"><div class="eyebrow">Multimedia Pembelajaran Interaktif • Fase F</div><h1>PENGENALAN<br>PETA</h1><div style="font-size:20px;font-weight:750;color:#d8eadc">Fokus: Peta Topografi</div><p>Belajar membaca peta, mengenali jenis-jenis peta, memahami garis kontur, dan memilih peta yang tepat untuk kebutuhan kehidupan sehari-hari maupun pekerjaan survei.</p><div class="pill">Pemetaan Topografi • Kelas XI SMK</div><div class="actions"><button class="btn gold" onclick="setPage('materials')">Mulai Pembelajaran →</button><button class="btn light" onclick="setPage('profile')">Identitas Media</button></div></section>
+<div class="content"><div class="field"><label for="studentName">Nama peserta didik</label><input id="studentName" placeholder="Tuliskan nama lengkap" value="${esc(state.student)}"><small class="muted">Nama disimpan pada perangkat ini saja.</small><button class="btn outline" style="width:max-content" onclick="saveName()">Simpan nama</button></div></div>
+<div class="section-head"><div><div class="kicker">Navigasi belajar</div><h2>Pilih aktivitas</h2></div><span class="muted">Belajar sesuai ritmemu</span></div>
+<div class="grid">
+<button class="card menu-card" onclick="setPage('materials')"><span class="menu-icon">📚</span><strong>Materi</strong><small>Konsep peta, jenis, unsur, skala, kontur, simbol.</small></button>
+<button class="card menu-card" onclick="setPage('simulation')"><span class="menu-icon">🧩</span><strong>Simulasi</strong><small>Cocokkan jenis peta dengan kegunaannya.</small></button>
+<button class="card menu-card" onclick="setPage('quiz')"><span class="menu-icon">✍️</span><strong>Kuis</strong><small>Tiga soal dan skor otomatis.</small></button>
+<button class="card menu-card" onclick="setPage('profile')"><span class="menu-icon">👤</span><strong>Profil</strong><small>Identitas media dan petunjuk penggunaan.</small></button>
+</div>
+<div class="callout"><b>Pertanyaan pemantik:</b> Apakah peta yang digunakan untuk mengetahui kemiringan lereng sama dengan peta untuk menunjukkan batas kepemilikan tanah? Mengapa?</div>`;
+}
+function saveName(){const v=document.getElementById('studentName').value.trim();state.student=v;localStorage.setItem('mpi_student',v);alert(v?'Nama berhasil disimpan pada perangkat ini.':'Nama dikosongkan.');}
+function materialsPage(){
+ const m=materials[state.material];
+ app.innerHTML=`${shell('Materi Pembelajaran','Pelajari setiap bagian secara berurutan. Gunakan tombol sebelumnya dan selanjutnya untuk berpindah materi.')}
+ <div class="content"><div class="kicker">Bagian ${state.material+1} dari ${materials.length}</div><div class="progress" style="margin:9px 0 20px"><span style="width:${(state.material+1)/materials.length*100}%"></span></div><h2 style="color:var(--green);margin:0">${m.title}</h2>${m.body}
+ <div class="actions"><button class="btn outline" onclick="changeMaterial(-1)" ${state.material===0?'disabled':''}>← Sebelumnya</button><button class="btn" onclick="changeMaterial(1)">${state.material===materials.length-1?'Selesai Materi':'Selanjutnya →'}</button><button class="btn outline" onclick="setPage('home')">Menu utama</button></div></div>`;
+}
+function changeMaterial(d){if(state.material===materials.length-1&&d>0){setPage('simulation');return}state.material=Math.max(0,Math.min(materials.length-1,state.material+d));render();}
+const matches=[
+{type:'Peta topografi',desc:'Surveyor perlu mengetahui elevasi dan kemiringan lereng suatu lokasi.',key:'topo'},
+{type:'Peta kadaster / bidang tanah',desc:'Warga membutuhkan informasi persil dan batas bidang tanah untuk proses pertanahan.',key:'kad'},
+{type:'Peta penggunaan lahan',desc:'Pemerintah desa ingin melihat persebaran sawah, hutan, dan permukiman.',key:'lahan'},
+{type:'Peta jaringan jalan',desc:'Tim perencana ingin mempelajari keterhubungan jalan dan akses menuju suatu lokasi.',key:'jalan'}
+];
+function simulationPage(){
+ app.innerHTML=`${shell('Simulasi: Pasangkan Jenis Peta','Baca situasi di sebelah kiri, lalu pilih jenis peta yang paling sesuai.')}
+ <div class="content"><div class="callout"><b>Misi Surveyor Muda:</b> Selesaikan empat pasangan dengan tepat. Setiap pilihan dapat diubah sebelum tombol periksa ditekan.</div>
+ <div id="matchArea">${matches.map((m,i)=>`<div class="match-row"><div><span class="pill">Situasi ${i+1}</span><p>${m.desc}</p></div><select id="match${i}" aria-label="Pilihan untuk situasi ${i+1}"><option value="">-- Pilih jenis peta --</option><option value="topo">Peta topografi</option><option value="kad">Peta kadaster / bidang tanah</option><option value="lahan">Peta penggunaan lahan</option><option value="jalan">Peta jaringan jalan</option></select></div>`).join('')}</div>
+ <div class="actions"><button class="btn" onclick="checkSimulation()">Periksa pasangan</button><button class="btn outline" onclick="resetSimulation()">Ulangi</button></div><div id="simFeedback" aria-live="polite"></div></div>
+ <div class="content"><h2 class="page-title" style="font-size:23px">Kenali contoh tampilan peta</h2><div class="grid" style="margin-top:15px">
+ <div><div class="visual contour">PETA TOPOGRAFI</div><p class="muted">Relief dan garis kontur</p></div><div><div class="visual parcel">PETA KADASTER</div><p class="muted">Bidang dan batas persil</p></div><div><div class="visual maproad">PETA PENGGUNAAN LAHAN</div><p class="muted">Kategori pemanfaatan lahan</p></div><div><div class="visual river">PETA JARINGAN</div><p class="muted">Keterhubungan jalan</p></div></div></div>
+ <div class="actions"><button class="btn gold" onclick="setPage('case')">Lanjut ke Studi Kasus HOTS →</button><button class="btn outline" onclick="setPage('home')">Menu utama</button></div>`;
+}
+function checkSimulation(){
+ const vals=matches.map((_,i)=>document.getElementById('match'+i).value);
+ if(vals.some(v=>!v)){document.getElementById('simFeedback').innerHTML='<div class="feedback neutral">Lengkapi semua pilihan terlebih dahulu.</div>';return}
+ const n=vals.filter((v,i)=>v===matches[i].key).length;
+ state.simulationDone=true;
+ document.getElementById('simFeedback').innerHTML=`<div class="feedback ${n===4?'good':'neutral'}">Hasil: ${n} dari 4 pasangan benar (${n*25}%). ${n===4?'Hebat! Semua pasangan tepat.':'Pelajari kembali fungsi tiap jenis peta, lalu tekan Ulangi untuk mencoba lagi.'}</div>`;
+}
+function resetSimulation(){matches.forEach((_,i)=>document.getElementById('match'+i).value='');document.getElementById('simFeedback').innerHTML='';}
+function casePage(){
+ app.innerHTML=`${shell('Studi Kasus: Peta untuk Sertifikat Tanah','Aktivitas bernalar kritis dan kontekstual dengan pekerjaan pemetaan.')}
+ <div class="content"><span class="pill">Tantangan HOTS</span><h2 style="color:var(--green)">Kasus: Batas bidang tanah warga</h2><div class="visual parcel" style="min-height:190px">ILUSTRASI PETA BIDANG TANAH</div>
+ <p>Seorang warga di Kolaka Utara akan mengurus sertifikat tanah. Ia membutuhkan informasi mengenai letak, batas bidang tanah, luas, dan posisi bidangnya terhadap bidang di sekitarnya.</p>
+ <h3>Pikirkan dan diskusikan</h3>
+ <ol><li>Jenis peta apa yang paling sesuai untuk menyajikan batas bidang tanah?</li><li>Apakah peta topografi juga bermanfaat dalam pekerjaan tersebut? Jelaskan.</li><li>Mengapa informasi batas dan luas tanah tidak boleh hanya ditentukan dari perkiraan pada gambar peta?</li></ol>
+ <div class="field"><label for="caseAnswer">Tuliskan jawaban dan alasanmu</label><textarea id="caseAnswer" rows="5" style="width:100%;padding:12px;border:1px solid #cbd9d0;border-radius:10px" placeholder="Menurut saya, peta yang paling sesuai adalah ... karena ..."></textarea></div>
+ <button class="btn" onclick="saveCase()">Simpan refleksi di perangkat ini</button><div id="caseFeedback"></div>
+ <div class="callout"><b>Arah jawaban:</b> Peta kadaster/peta bidang tanah menyajikan informasi persil dan batas bidang. Peta topografi dapat menjadi informasi pendukung untuk memahami relief/elevasi dan kondisi medan. Penetapan batas, luas, dan hak atas tanah harus merujuk pada pengukuran, dokumen, serta prosedur resmi pertanahan.</div></div>
+ <div class="actions"><button class="btn" onclick="setPage('quiz')">Lanjut ke Kuis →</button><button class="btn outline" onclick="setPage('simulation')">Kembali ke Simulasi</button></div>`;
+}
+function saveCase(){const v=document.getElementById('caseAnswer').value.trim();if(!v){document.getElementById('caseFeedback').innerHTML='<div class="feedback neutral">Tuliskan jawaban terlebih dahulu.</div>';return}localStorage.setItem('mpi_case_'+(state.student||'peserta'),v);document.getElementById('caseFeedback').innerHTML='<div class="feedback good">Refleksi berhasil disimpan pada perangkat ini.</div>';}
+function quizPage(){
+ const done=state.quizSubmitted;
+ app.innerHTML=`${shell('Kuis Interaktif','Jawablah tiga soal berikut. Pilih satu jawaban paling tepat pada setiap soal.')}
+ <div class="content"><div class="kicker">Evaluasi pemahaman</div><div class="progress" style="margin:10px 0 20px"><span style="width:${done?100:Object.keys(state.quizAnswers).length/3*100}%"></span></div>
+ ${quiz.map((q,i)=>`<section class="question"><div class="kicker">Soal ${i+1} dari 3</div><h3 style="margin-top:5px;color:var(--ink)">${q.q}</h3>${q.opts.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}" ${state.quizAnswers[i]===j?'checked':''} ${done?'disabled':''}><span><b>${'ABCD'[j]}.</b> ${o}</span></label>`).join('')}${done?`<div class="feedback ${state.quizAnswers[i]===q.a?'good':'bad'}">${state.quizAnswers[i]===q.a?'✓ Jawaban benar.':'✗ Jawaban belum tepat.'} ${q.why}</div>`:''}</section>`).join('')}
+ ${done?`<div class="card" style="text-align:center"><div class="kicker">Hasil kuis</div><div class="score">${Math.round(quiz.filter((q,i)=>state.quizAnswers[i]===q.a).length/3*100)}</div><b>Nilai akhir</b><p>${quiz.filter((q,i)=>state.quizAnswers[i]===q.a).length} dari 3 jawaban benar.</p><p class="muted">${quiz.filter((q,i)=>state.quizAnswers[i]===q.a).length===3?'Sangat baik! Pertahankan pemahamanmu.':'Pelajari kembali materi yang belum dikuasai, lalu coba lagi.'}</p><button class="btn" onclick="resetQuiz()">Ulangi kuis</button></div>`:`<div class="actions"><button class="btn" onclick="submitQuiz()">Periksa dan lihat nilai</button><button class="btn outline" onclick="resetQuiz()">Reset jawaban</button></div><div id="quizFeedback"></div>`}</div>
+ <div class="actions"><button class="btn outline" onclick="setPage('home')">Kembali ke menu utama</button><button class="btn gold" onclick="setPage('case')">Lihat studi kasus</button></div>`;
+ quiz.forEach((q,i)=>document.querySelectorAll(`input[name="q${i}"]`).forEach(el=>el.addEventListener('change',()=>{state.quizAnswers[i]=Number(el.value)})));
+}
+function submitQuiz(){if(Object.keys(state.quizAnswers).length!==3){document.getElementById('quizFeedback').innerHTML='<div class="feedback neutral">Jawab semua soal sebelum mengirim jawaban.</div>';return}state.quizSubmitted=true;const correct=quiz.filter((q,i)=>state.quizAnswers[i]===q.a).length;const score=Math.round(correct/3*100);localStorage.setItem('mpi_last_score',String(score));render();}
+function resetQuiz(){state.quizAnswers={};state.quizSubmitted=false;render();}
+function profilePage(){
+ app.innerHTML=`${shell('Profil Media','Identitas dan panduan penggunaan aplikasi.')}
+ <div class="content"><div class="profile-mark">🧭</div><h2 style="color:var(--green);margin:0">MPI Pengenalan Peta</h2><p class="muted">Fokus pada Peta Topografi</p><table><tr><th>Komponen</th><th>Identitas</th></tr><tr><td>Satuan pendidikan</td><td>SMK Negeri 5 Kolaka Utara</td></tr><tr><td>Mata pelajaran</td><td>Pemetaan Topografi</td></tr><tr><td>Kelas/Fase</td><td>XI / Fase F</td></tr><tr><td>Kurikulum</td><td>Kurikulum Merdeka</td></tr><tr><td>Materi</td><td>Pengenalan Peta</td></tr><tr><td>Format</td><td>HTML5 interaktif, dapat digunakan offline</td></tr></table>
+ <h3>Petunjuk penggunaan</h3><ol><li>Buka menu Materi dan pelajari setiap bagian.</li><li>Kerjakan Simulasi mencocokkan jenis peta.</li><li>Jawab pertanyaan pada Studi Kasus HOTS.</li><li>Kerjakan Kuis dan lihat hasilnya.</li></ol>
+ <div class="callout"><b>Catatan:</b> Ilustrasi pola peta dalam media ini merupakan ilustrasi edukatif, bukan peta ukur atau dokumen resmi. Untuk pekerjaan nyata, gunakan peta dan data resmi dari instansi berwenang.</div>
+ <p class="muted">Pengembang/pengajar: dapat dilengkapi dengan nama guru dan identitas sekolah sebelum distribusi.</p></div>
+ <div class="actions"><button class="btn" onclick="setPage('home')">Kembali ke Beranda</button></div>`;
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+document.getElementById('homeBtn').addEventListener('click',()=>setPage('home'));
+document.getElementById('audioBtn').addEventListener('click',()=>{state.audio=!state.audio;document.getElementById('audioBtn').textContent=state.audio?'🔊':'🔇';document.getElementById('audioBtn').title=state.audio?'Audio aktif':'Audio nonaktif';});
+render();
+</script>
+</body>
+</html>
